@@ -9,20 +9,16 @@ const saltRounds = 12;
 const myPlaintextPassword = 'sUperpassw0rd!';
 const someOtherPlaintextPassword = 'pass123';
 
-const hash = bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
-  console.log(hash + "" +  "<= this is the hash");
-
-  bcrypt.compare(myPlaintextPassword, hash , (err,res)=>{
-    console.log(res + "" + "<= response");
-});
-  });
-
-
-
-
 //START_ASYNC -do not remove notes, place code between correct pair of notes.
 
-
+const hash = bcrypt.hash(myPlaintextPassword, saltRounds, (err, hash) => {
+    console.log(hash );
+  
+    bcrypt.compare(someOtherPlaintextPassword, hash , (err,res)=>{
+      console.log(res );
+  });
+    });
+  
 
 //END_ASYNC
 
